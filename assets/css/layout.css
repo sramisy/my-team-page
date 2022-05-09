@@ -1,0 +1,22 @@
+.container {
+  max-inline-size: 920px;
+  margin-inline: auto;
+}
+
+.l-grid-team {
+  --column-count: 2;
+  --gutter: 1.75rem;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), minmax(150px, 1fr));
+  gap: var(--gutter);
+  padding-block-start: clamp(4rem, 3rem + 4vw, 6rem);
+  padding-block-end: 7.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .l-grid-team {
+    --column-count: 3;
+    --gutter: 4rem;
+  }
+}

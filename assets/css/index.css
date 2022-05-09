@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=PT+Serif:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap');
+
+@import "layout.css";
+
+:root {
+  /* Colors */
+  --clr-black: #000;
+  --clr-gray: #a9a9a9;
+
+  /* Fonts */
+  --ff-primary: 'Poppins', sans-serif;
+  --ff-secondary: 'PT Serif', serif;
+  --ff-tertiary: 'Montserrat', sans-serif;
+
+  /* Font Sizes */
+  --fs-2xs: 0.625rem;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 2.25rem;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-md);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+  object-fit: cover;
+}
+
+.main-content {
+  padding-block-start: clamp(4.5rem, 3.5rem + 4vw, 6.875rem);
+  padding-inline: 1.25rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.header__title-1 {
+  font-family: var(--ff-secondary);
+  font-weight: 700;
+  font-size: var(--fs-2xl);
+  letter-spacing: -0.03em;
+}
+
+.header__content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__title-2 {
+  font-weight: 600;
+  font-size: var(--fs-lg);
+  text-transform: uppercase;
+}
+
+.header__desc {
+  font-weight: 400;
+  font-size: clamp(var(--fs-sm), 0.5rem + 1.5vw, var(--fs-lg));
+  max-inline-size: 36ch;
+  line-height: 1.6;
+}
+
+.l-grid-team .member:nth-child(even) {
+  margin-block-start: 2.5rem;
+}
+
+.member {
+  position: relative;
+}
+
+.member__img {
+  padding-inline-end: 1.25rem;
+}
+
+.member__name {
+  font-weight: 600;
+  font-size: clamp(var(--font-sm), 0.5rem + 1.5vw, var(--font-lg));
+  margin-block-start: 0.75rem;
+}
+
+.member__profession {
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  position: absolute;
+  top: 0;
+  right: 0;
+  writing-mode: vertical-lr;
+}
+
+.author {
+  font-size: var(--fs-sm);
+  font-family: var(--ff-tertiary);
+  font-weight: 500;
+  text-align: center;
+  color: var(--clr-gray);
+}
+
+.author__repo {
+  font-size: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .l-grid-team .member:nth-child(even) {
+    margin-block-start: 0;
+  }
+
+  .l-grid-team .member:nth-child(3n + 2) {
+    margin-block-start: 4.5rem;
+  }
+}
